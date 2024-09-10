@@ -25,6 +25,8 @@ var ROOT_URL="{{ config.root }}"
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
     <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
 <!-- 左上角图片 一般节假日什么的 -->
 <img style="width: auto;position: absolute;top: 0;left: 0;z-index: 9999;" src="{{- url_for('/images/739924dd0dc8e2a37f14d6403cf72acd_134x24.png') }}"/>
 <!-- 左上角图片 一般节假日什么的 -->
@@ -38,7 +40,6 @@ var ROOT_URL="{{ config.root }}"
 <script async src="{{- url_for('/js/wearherWidget.js?id=ww_4b54bde5f3d24') }}"></script>
 <!--   天气组件   -->
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 

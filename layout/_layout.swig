@@ -18,6 +18,8 @@ var ROOT_URL="{{ config.root }}"
 </script>
 <script src="{{- url_for('/js/live2d-widge/autoload.js') }}"></script>
 <!-- 加载宠物看板 -->
+<!-- 个人工具、js信息加载 -->
+  {{- next_js('my_utils.js') }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -26,6 +28,16 @@ var ROOT_URL="{{ config.root }}"
 <!-- 左上角图片 一般节假日什么的 -->
 <img style="width: auto;position: absolute;top: 0;left: 0;z-index: 9999;" src="{{- url_for('/images/739924dd0dc8e2a37f14d6403cf72acd_134x24.png') }}"/>
 <!-- 左上角图片 一般节假日什么的 -->
+
+<!--   天气组件   -->
+<link type="text/css" rel="stylesheet" href="{{- url_for('/css/wearherWidget.css')}}"/>
+<div id="ww_4b54bde5f3d24" v='1.3' loc='auto'
+     a='{"t":"responsive","lang":"zh","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+  <a href="https://weatherwidget.org/zh/" id="ww_4b54bde5f3d24_u" target="_blank">天气加载中...</a>
+</div>
+<script async src="{{- url_for('/js/wearherWidget.js?id=ww_4b54bde5f3d24') }}"></script>
+<!--   天气组件   -->
+
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>

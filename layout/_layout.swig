@@ -39,6 +39,8 @@ var ROOT_URL="{{ config.root }}"
 </div>
 <script async src="{{- url_for('/js/wearherWidget.js?id=ww_4b54bde5f3d24') }}"></script>
 <!--   天气组件   -->
+    <!--   每日一句   -->
+    {{ partial('everyDay.swig', {}, {cache: theme.cache.enable}) }}
 
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>

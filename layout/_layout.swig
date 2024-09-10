@@ -7,6 +7,17 @@
   <title>{% block title %}{% endblock %}</title>
   {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
+
+<!-- 定义全局url常量，用于后续script脚本读取url（解决资源获取问题） -->
+<script>
+var ROOT_URL="{{ config.root }}"
+</script>
+<!-- 加载宠物看板 -->
+<script>
+  var live2d_path = `{{- url_for('/js/live2d-widge/') }}`;
+</script>
+<script src="{{- url_for('/js/live2d-widge/autoload.js') }}"></script>
+<!-- 加载宠物看板 -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
